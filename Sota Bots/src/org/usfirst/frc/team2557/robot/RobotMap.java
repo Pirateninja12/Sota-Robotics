@@ -105,20 +105,20 @@ public class RobotMap {
 	//Other things that need to be included to make the robot function
 	
 	public static void init() {
-		intakearmMotor = new CANTalon(2);
+		intakearmMotor = new Talon(2);
 		
-		winchMotor = new CANTalon(3);
+		winchMotor = new Talon(3);
 		
-		driveTrainFrontLeft = new CANTalon(0);
+		driveTrainFrontLeft = new Talon(0);
 		LiveWindow.addActuator("DriveTrain", "FrontLeft", (Talon) driveTrainFrontLeft);
 		
-		driveTrainFrontRight = new CANTalon(1);
+		driveTrainFrontRight = new Talon(1);
 		LiveWindow.addActuator("DriveTrain", "FrontRight", (Talon) driveTrainFrontRight);
 		
-		driveTrainBackLeft = new CANTalon(5);
+		driveTrainBackLeft = new Talon(5);
 		LiveWindow.addActuator("DriveTrain", "BackLeft", (Talon) driveTrainBackLeft);
 		
-		driveTrainBackRight = new CANTalon(4);
+		driveTrainBackRight = new Talon(4);
 		LiveWindow.addActuator("DriveTrain", "BaclLaft", (Talon) driveTrainBackRight);
 		
 		driveTrainRobotDrive41 = new RobotDrive(driveTrainFrontLeft, driveTrainFrontRight, driveTrainBackLeft, driveTrainBackRight);

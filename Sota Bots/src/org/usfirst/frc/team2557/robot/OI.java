@@ -13,6 +13,7 @@ import org.usfirst.frc.team2557.robot.commands.*;
 //modified on 1/7/16 
 //for the 2014 robot. This code is supposed to be done by the end of the day today which is 1/7/16. 
 //Finished the notes on this code after lunch on 1/8/15. 
+//Found problems uploading to the RoborIO
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -59,6 +60,8 @@ public class OI {
       
        //This is assigning each of the buttons that were defined above to where they are located on the game pad.
        //drive train in this instance is allowing the drive train to be controlled by one joy stick or arcade drive.
+       //(system) = new Joystic(value);
+       //This is so the drive train moves wi
        
        gp1A.whenPressed(new Winch());
        gp1B.whenPressed(new Supershifter());
