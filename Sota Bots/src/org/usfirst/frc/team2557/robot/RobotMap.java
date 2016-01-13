@@ -7,7 +7,6 @@ package org.usfirst.frc.team2557.robot;
  */
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 //This is my programming Journal.
@@ -22,12 +21,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class RobotMap {
                                                         //These are each of the ports that the motors will be connected to.
-	public static SpeedController driveTrainFrontLeft;  //Port0
-	public static SpeedController driveTrainFrontRight; //Port1
-	public static SpeedController driveTrainBackLeft;   //Port2
-	public static SpeedController driveTrainBackRight;  //Port3
-	public static SpeedController intakearmMotor;       //Port4
-	public static SpeedController winchMotor;           //Port5
+	public static CANTalon driveTrainFrontLeft = new CANTalon(4);   //Port4
+	public static CANTalon driveTrainFrontRight = new CANTalon(5);  //Port5
+	public static CANTalon driveTrainBackLeft = new CANTalon(0);    //Port0
+	public static CANTalon driveTrainBackRight = new CANTalon(1);   //Port1
+	public static CANTalon intakearmMotor = new CANTalon(3);        //Port3
+	public static CANTalon winchMotor = new CANTalon(2);            //Port2
 	public static RobotDrive driveTrainRobotDrive41;
 	
 	//Speed controller is for each of the motors only. 
@@ -40,7 +39,7 @@ public class RobotMap {
 	
 	//This is labeling each of the Double Solenoid's that are on the robot.
 	//This is where each of the Solenoid's are located
-	                                                    //This is where each of the Inputs are gong to be located.
+	                                                    //This is where each of the sensors are gong to be located.
 	public static AnalogInput rangeLeft;                //Port0
 	public static AnalogInput rangeRight;               //Port1
 	public static AnalogInput rangeCenter;              //Port2
@@ -105,21 +104,7 @@ public class RobotMap {
 	//Other things that need to be included to make the robot function
 	
 	public static void init() {
-		intakearmMotor = new Talon(2);
 		
-		winchMotor = new Talon(3);
-		
-		driveTrainFrontLeft = new Talon(0);
-		LiveWindow.addActuator("DriveTrain", "FrontLeft", (Talon) driveTrainFrontLeft);
-		
-		driveTrainFrontRight = new Talon(1);
-		LiveWindow.addActuator("DriveTrain", "FrontRight", (Talon) driveTrainFrontRight);
-		
-		driveTrainBackLeft = new Talon(5);
-		LiveWindow.addActuator("DriveTrain", "BackLeft", (Talon) driveTrainBackLeft);
-		
-		driveTrainBackRight = new Talon(4);
-		LiveWindow.addActuator("DriveTrain", "BaclLaft", (Talon) driveTrainBackRight);
 		
 		driveTrainRobotDrive41 = new RobotDrive(driveTrainFrontLeft, driveTrainFrontRight, driveTrainBackLeft, driveTrainBackRight);
 		driveTrainRobotDrive41.setSafetyEnabled(false);
